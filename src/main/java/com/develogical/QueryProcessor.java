@@ -9,6 +9,10 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
 
+        if (query.toLowerCase().contains("tejas")) {
+            return "Tejas Narayan is a student at Imperial College London";
+        }
+
         if (query.toLowerCase().contains("imperial")) {
             return "Imperial College is a university in London";
         }
