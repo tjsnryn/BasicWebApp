@@ -103,9 +103,25 @@ public class QueryProcessor {
             return "Paris";
         }
 
-        // if (query.toLowerCase().contains("number in the fibonacci sequence")) {
-        //     n = String.
-        // }
+        if (query.toLowerCase().contains("number in the fibonacci sequence")) {
+            int out = 1;
+
+            try {
+                String s = query.split(" ")[4];
+                int n = Integer.parseInt(s.substring(0, s.length() - 2));
+                out = 1;
+                int prev = 1;
+                for (int i = 1; i < n; i++) {
+                    int tmp = out;
+                    out += prev;
+                    prev = tmp;
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
+            return Integer.toString(out);
+        }
 
         return "";
     }
