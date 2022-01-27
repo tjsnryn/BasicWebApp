@@ -28,7 +28,7 @@ public class QueryProcessor {
                 try {
                     out = Math.max(Integer.parseInt(s.trim()), out);
                 }
-                catch (NumberFormatException e) {
+                catch (Exception e) {
                     System.out.println(e);
                 }
 
@@ -39,7 +39,12 @@ public class QueryProcessor {
 
         if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")) {
             String[] matches = query.split(" ");
-             return Integer.toString(Integer.parseInt(matches[3]) + Integer.parseInt(matches[5]));
+            try {
+                return Integer.toString(Integer.parseInt(matches[3]) + Integer.parseInt(matches[5]));
+            } catch (Exception e) {
+                System.out.println(e)
+            }
+             
         }
 
         return "";
