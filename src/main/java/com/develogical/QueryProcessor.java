@@ -38,7 +38,7 @@ public class QueryProcessor {
             return Integer.toString(out);
         }
 
-        if (query.toLowerCase().contains("which of the following numbers is both a quare and a cube:")) {
+        if (query.toLowerCase().contains("which of the following numbers is both a square and a cube:")) {
             String[] numbers_str = query.split(":")[2].split(",");
             int out = 0;
             for (String s: numbers_str) {
@@ -59,28 +59,6 @@ public class QueryProcessor {
 
             return Integer.toString(out);
         }
-
-        // if (query.toLowerCase().contains("which of the following numbers is :")) {
-        //     String[] numbers_str = query.split(":")[1].split(",");
-        //     int out = 0;
-        //     for (String s: numbers_str) {
-        //         try {
-        //             int n = Integer.parseInt(s);
-
-        //             if (n == Math.floor(Math.sqrt(n)) * Math.floor(Math.sqrt(n))) {
-        //                 if (n == Math.floor(Math.cbrt(n)) * Math.floor(Math.cbrt(n)) * Math.floor(Math.cbrt(n))) {
-        //                     out = n;
-        //                 } 
-        //             }
-        //         }
-        //         catch (Exception e) {
-        //             System.out.println(e);
-        //         }
-
-        //     }
-
-        //     return Integer.toString(out);
-        // }
 
         if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")) {
             String[] matches = query.split(" ");
@@ -121,13 +99,13 @@ public class QueryProcessor {
             return "2016";
         }
 
-        if (query.toLowerCase().contains("which city is the eiffel tower nn")) {
+        if (query.toLowerCase().contains("which city is the eiffel tower in")) {
             return "Paris";
         }
 
-        if (query.toLowerCase().contains("what is the 10th number in the fibonacci sequence")) {
-            return "55";
-        }
+        // if (query.toLowerCase().contains("number in the fibonacci sequence")) {
+        //     n = String.
+        // }
 
         return "";
     }
