@@ -22,7 +22,7 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("which of the following numbers is the largest:")) {
-            String[] numbers_str = query.split(":").split(",");
+            String[] numbers_str = query.split(":")[1].split(",");
             int out = 0;
             for (String s: numbers_str) {
                 try {
@@ -31,7 +31,7 @@ public class QueryProcessor {
                 catch (NumberFormatException e) {
                     System.out.println(e);
                 }
-                
+
             }
 
             return Integer.toString(out);
@@ -39,7 +39,7 @@ public class QueryProcessor {
 
         if (query.toLowerCase().matches("what is .* plus .*")) {
             String[] matches = query.split(" ");
-             return Integer.toString(Integer.parseInt(matches[2]) + Integer.parseInt(matches[4]));
+             return Integer.toString(Integer.parseInt(matches[2]) + Integer.parseInt(matches[4])));
         }
 
         return "";
