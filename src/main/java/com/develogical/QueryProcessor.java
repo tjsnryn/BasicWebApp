@@ -22,10 +22,16 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("which of the following numbers is the largest:")) {
-            String[] numbers_str = query.split(":")[1].split(",");
+            String[] numbers_str = query.split(":").split(",");
             int out = 0;
             for (String s: numbers_str) {
-                out = Math.max(Integer.parseInt(s.trim()), out);
+                try {
+                    out = Math.max(Integer.parseInt(s.trim()), out);
+                }
+                catch (NumberFormatException e) {
+                    System.out.println(e);
+                }
+                
             }
 
             return Integer.toString(out);
