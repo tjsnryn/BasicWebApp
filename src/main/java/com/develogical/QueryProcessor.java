@@ -37,9 +37,9 @@ public class QueryProcessor {
             return Integer.toString(out);
         }
 
-        if (query.toLowerCase().matches("what is .* plus .*")) {
+        if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")) {
             String[] matches = query.split(" ");
-             return Integer.toString(Integer.parseInt(matches[2]) + Integer.parseInt(matches[4])));
+             return Integer.toString(Integer.parseInt(matches[2]) + Integer.parseInt(matches[4]));
         }
 
         return "";
