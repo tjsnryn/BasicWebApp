@@ -47,6 +47,16 @@ public class QueryProcessor {
              
         }
 
+        if (query.toLowerCase().contains("multiplied by") && query.toLowerCase().contains("what is")) {
+            String[] matches = query.split(" ");
+            try {
+                return Integer.toString(Integer.parseInt(matches[3]) + Integer.parseInt(matches[6]));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+             
+        }
+
         return "";
     }
 }
