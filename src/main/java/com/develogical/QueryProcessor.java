@@ -42,7 +42,7 @@ public class QueryProcessor {
             try {
                 return Integer.toString(Integer.parseInt(matches[3]) + Integer.parseInt(matches[5]));
             } catch (Exception e) {
-                System.out.println(e)
+                System.out.println(e);
             }
              
         }
