@@ -45,4 +45,9 @@ public class QueryProcessorTest {
     public void plus() throws Exception {
         assertThat(queryProcessor.process("what is 69 plus 70"), containsString("139"));
     }
+
+    @Test
+    public void multiplied() throws Exception {
+        assertThat(queryProcessor.process("what is 20 multipled by 18"), containsString("360"));
+    }
 }

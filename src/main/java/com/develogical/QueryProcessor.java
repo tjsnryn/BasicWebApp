@@ -22,7 +22,8 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("which of the following numbers is the largest:")) {
-            String[] numbers_str = query.split(":")[1].split(",");
+            System.out.println(query);
+            String[] numbers_str = query.split(":")[2].split(",");
             int out = 0;
             for (String s: numbers_str) {
                 try {
@@ -38,7 +39,7 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("which of the following numbers is both a quare and a cube:")) {
-            String[] numbers_str = query.split(":")[1].split(",");
+            String[] numbers_str = query.split(":")[2].split(",");
             int out = 0;
             for (String s: numbers_str) {
                 try {
@@ -84,6 +85,7 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")) {
             String[] matches = query.split(" ");
             try {
+                System.out.println(matches);
                 return Integer.toString(Integer.parseInt(matches[3]) + Integer.parseInt(matches[5]));
             } catch (Exception e) {
                 System.out.println(e);
