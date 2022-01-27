@@ -103,12 +103,30 @@ public class QueryProcessor {
              
         }
 
+        if (query.toLowerCase().contains("minus") && query.toLowerCase().contains("what is")) {
+            String[] matches = query.split(" ");
+            try {
+                return Integer.toString(Integer.parseInt(matches[3]) - Integer.parseInt(matches[5]));
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+             
+        }
+
         if (query.toLowerCase().contains("what colour is a banana")) {
             return "yellow";
         }
 
-        if (query.toLowerCase().contains("which year was Theresa May first elected as the Prime Minister of Great Britain")) {
+        if (query.toLowerCase().contains("which year was theresa may first elected as the prime minister of great britain")) {
             return "2016";
+        }
+
+        if (query.toLowerCase().contains("which city is the eiffel tower nn")) {
+            return "Paris";
+        }
+
+        if (query.toLowerCase().contains("what is the 10th number in the fibonacci sequence")) {
+            return "55";
         }
 
         return "";
