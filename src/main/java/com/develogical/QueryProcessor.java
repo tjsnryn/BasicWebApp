@@ -59,6 +59,28 @@ public class QueryProcessor {
             return Integer.toString(out);
         }
 
+        // if (query.toLowerCase().contains("which of the following numbers is :")) {
+        //     String[] numbers_str = query.split(":")[1].split(",");
+        //     int out = 0;
+        //     for (String s: numbers_str) {
+        //         try {
+        //             int n = Integer.parseInt(s);
+
+        //             if (n == Math.floor(Math.sqrt(n)) * Math.floor(Math.sqrt(n))) {
+        //                 if (n == Math.floor(Math.cbrt(n)) * Math.floor(Math.cbrt(n)) * Math.floor(Math.cbrt(n))) {
+        //                     out = n;
+        //                 } 
+        //             }
+        //         }
+        //         catch (Exception e) {
+        //             System.out.println(e);
+        //         }
+
+        //     }
+
+        //     return Integer.toString(out);
+        // }
+
         if (query.toLowerCase().contains("plus") && query.toLowerCase().contains("what is")) {
             String[] matches = query.split(" ");
             try {
@@ -77,6 +99,14 @@ public class QueryProcessor {
                 System.out.println(e);
             }
              
+        }
+
+        if (query.toLowerCase().contains("what colour is a banana")) {
+            return "yellow";
+        }
+
+        if (query.toLowerCase().contains("which year was Theresa May first elected as the Prime Minister of Great Britain")) {
+            return "2016";
         }
 
         return "";
